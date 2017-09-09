@@ -1,0 +1,1566 @@
+@prefix : <http://www.semanticweb.org/no/ontologies/2017/8/PAO> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.github.com/no/ontologies/2017/PAO> .
+
+<http://www.github.com/no/ontologies/2017/PAO> rdf:type owl:Ontology ;
+                                                owl:imports <http://www.obofoundry.org/ro/ro.owl> ,
+                                                            <http://www.ifomis.org/bfo/1.1> ;
+                                                <http://purl.org/dc/elements/1.1/title> "Personality Assessment Ontology (PAO)"@en ;
+                                                rdfs:comment "The PAO was built by J. Neil Otte and Brian Donohue in 2013 as a final project in Barry Smith's Ontological Engineering course. The aim of PAO is to represent data produced through the process of assessing a variety of the dimensions of personality. This file represents an update to that project."@en ;
+                                                owl:versionInfo ".5"@en ;
+                                                <http://purl.org/dc/elements/1.1/source> "https://github.com/neilotte/moralpsych"@en ;
+                                                <http://purl.org/dc/elements/1.1/creator> "Brian Donohue and J. Neil Otte"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00269
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00269> rdf:type owl:ObjectProperty ;
+                                                           owl:inverseOf <http://www.github.com/no/ontologies/2017/PAO/OEF13_00270> ;
+                                                           rdf:type owl:AsymmetricProperty ;
+                                                           rdfs:label "has_specified_output"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00270
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00270> rdf:type owl:ObjectProperty ,
+                                                                    owl:AsymmetricProperty ;
+                                                           rdfs:label "is_specified_output_of"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00271
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00271> rdf:type owl:ObjectProperty ;
+                                                           owl:inverseOf <http://www.github.com/no/ontologies/2017/PAO/OEF13_00400> ;
+                                                           rdf:type owl:AsymmetricProperty ;
+                                                           rdfs:domain <http://www.ifomis.org/bfo/1.1/span#ProcessualEntity> ;
+                                                           rdfs:range <http://www.ifomis.org/bfo/1.1/snap#RealizableEntity> ;
+                                                           rdfs:label "realizes"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00291
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00291> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                                           rdfs:label "is_about"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00295
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00295> rdf:type owl:ObjectProperty ;
+                                                           owl:inverseOf <http://www.github.com/no/ontologies/2017/PAO/OEF13_00399> ;
+                                                           rdf:type owl:AsymmetricProperty ;
+                                                           rdfs:label "concretizes"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00397
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00397> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf <http://www.github.com/no/ontologies/2017/PAO/OEF13_00291> ;
+                                                           owl:inverseOf <http://www.github.com/no/ontologies/2017/PAO/OEF13_00398> ;
+                                                           rdf:type owl:AsymmetricProperty ;
+                                                           rdfs:domain <http://purl.obolibrary.org/obo/IAO_0000109> ;
+                                                           rdfs:label "is_measurement_of"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00398
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00398> rdf:type owl:ObjectProperty ,
+                                                                    owl:AsymmetricProperty ;
+                                                           rdfs:label "measures"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00399
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00399> rdf:type owl:ObjectProperty ,
+                                                                    owl:AsymmetricProperty ;
+                                                           rdfs:label "is_concretized_by"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00400
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00400> rdf:type owl:ObjectProperty ,
+                                                                    owl:AsymmetricProperty ;
+                                                           rdfs:label "is_realized_by"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/evaluates
+<http://www.github.com/no/ontologies/2017/PAO/evaluates> rdf:type owl:ObjectProperty ;
+                                                         owl:inverseOf <http://www.github.com/no/ontologies/2017/PAO/is_evaluated_by> ;
+                                                         rdf:type owl:AsymmetricProperty .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/is_evaluated_by
+<http://www.github.com/no/ontologies/2017/PAO/is_evaluated_by> rdf:type owl:ObjectProperty ,
+                                                                        owl:AsymmetricProperty .
+
+
+###  http://www.obofoundry.org/ro/ro.owl#has_part
+<http://www.obofoundry.org/ro/ro.owl#has_part> rdf:type owl:ObjectProperty ,
+                                                        owl:AsymmetricProperty ,
+                                                        owl:TransitiveProperty ;
+                                               rdfs:label "has_part"@en .
+
+
+###  http://www.obofoundry.org/ro/ro.owl#participates_in
+<http://www.obofoundry.org/ro/ro.owl#participates_in> rdf:type owl:ObjectProperty .
+
+
+###  http://www.obofoundry.org/ro/ro.owl#preceded_by
+<http://www.obofoundry.org/ro/ro.owl#preceded_by> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                  owl:inverseOf <http://www.obofoundry.org/ro/ro.owl#precedes> .
+
+
+###  http://www.obofoundry.org/ro/ro.owl#precedes
+<http://www.obofoundry.org/ro/ro.owl#precedes> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/8/inheres_in
+<http://www.semanticweb.org/no/ontologies/2017/8/inheres_in> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00265
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:label "has_Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OEF13_00367
+<http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:label "has_negatively_correlated_Measurement"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000027
+<http://purl.obolibrary.org/obo/IAO_0000027> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                             rdfs:label "Data Item"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A data item is an information content entity that is intended to be a truthful statement about something."@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000030
+<http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant> ;
+                                             <http://purl.org/dc/elements/1.1/source> "Information Artifact Ontology"@en ;
+                                             rdfs:label "Information Content Entity" ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A generically dependent continuant that is about some thing."@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000033
+<http://purl.obolibrary.org/obo/IAO_0000033> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                             rdfs:comment "Directive_Information_Entity is some Information_Content_Entity that bears information related to the implementation or realization of some Entity." ;
+                                             rdfs:label "Directive Information Entity"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "An information content entity whose concretizations indicate to their bearer how to realize them in a process."@en .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000109
+<http://purl.obolibrary.org/obo/IAO_0000109> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027> ;
+                                             rdfs:label "Measurement Datum"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A measurement datum is an information content entity that is a recording of the output of a measurement such as produced by a device." .
+
+
+###  http://purl.obolibrary.org/obo/MF_0000202
+<http://purl.obolibrary.org/obo/MF_0000202> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Disposition> ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/MF_0000203>
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.semanticweb.org/no/ontologies/2017/8/inheres_in> ;
+                                                              owl:someValuesFrom <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+                                                            ] ;
+                                            <http://purl.org/dc/elements/1.1/source> "Mental Functioning Ontology"@en ;
+                                            rdfs:comment "A personality is a complex sum of dispositions and predispositions towards mental processes and behaviour."@en ;
+                                            rdfs:label "Personality"@en .
+
+
+###  http://purl.obolibrary.org/obo/MF_0000203
+<http://purl.obolibrary.org/obo/MF_0000203> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Disposition> ;
+                                            rdfs:label "Personality Trait"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "A personality trait is an individual disposition or predisposition that forms part of an overall personality and is realized in repeated occurrences of a specific mental process type or behavioural profile."@en .
+
+
+###  http://purl.obolibrary.org/obo/NCBITaxon_9606
+<http://purl.obolibrary.org/obo/NCBITaxon_9606> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Object> ;
+                                                rdfs:label "Homo sapiens"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000067
+<http://purl.obolibrary.org/obo/OBI_0000067> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Role> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/is_evaluated_by> ;
+                                                               owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire>
+                                                             ] ;
+                                             rdfs:label "Evaluant Role"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A role that inheres in a material entity that is realized in an assay in which data is generated about the bearer of the evaluant role" .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000070
+<http://purl.obolibrary.org/obo/OBI_0000070> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/span#ProcessAggregate> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00271> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000067>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00271> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/OBI_0000202>
+                                                             ] ;
+                                             rdfs:label "Assay"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A planned process with the objective to produce information about the material entity that is the evaluant, by physically examining it or its proxies."@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0000202
+<http://purl.obolibrary.org/obo/OBI_0000202> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/snap#Role> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/evaluates> ;
+                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/MF_0000202>
+                                                             ] ;
+                                             rdfs:label "Investigator Role"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A role borne by an entity and that is realized in a process that is part of an investigation in which an objective is achieved. These processes include, among others: planning, overseeing, funding, reviewing."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AbsorptionMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/AbsorptionMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Absorption_Measurement is some Openness_to_Experience_Measurement that is correlated to the output of some Absorption_Assay." ;
+                                                                     rdfs:label "Absorption_Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AbsorptionQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/AbsorptionQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Absorption_Questionnaire is some Personality_Scale that evaluates Openness_to_Experience of some Personality."@en ;
+                                                                       rdfs:label "Absorption Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AchievementViaIndependenceQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/AchievementViaIndependenceQuestionnaire> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                                       rdfs:comment "Achievement_via_Independence_Questionnaire is some Personality_Scale that evaluates Openness_to_Experience of some Personality." ;
+                                                                                       rdfs:label "Achievement via Independence Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AchievmentViaIndependenceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/AchievmentViaIndependenceMeasurement> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                      owl:onDataRange xsd:anyURI
+                                                                                                    ] ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                                      owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                                      owl:onDataRange xsd:anyURI
+                                                                                                    ] ;
+                                                                                    rdfs:comment "Achievement_via_Independence_Measurement is some Openness_to_Experience_Measurement that is correlated to the output of some Achievement_via_Independence_Assay." ;
+                                                                                    rdfs:label "Achievement via Independence Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AdjectiveQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/AdjectiveQuestionnaire> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/CreativePersonalityQuestionnaire>
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/CriticalParentQuestionnaire>
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/IdealSelfQuestionnaire>
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/MilitaryLeadershipQuestionnaire>
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/SelfConfidenceQuestionnaire>
+                                                                                      ] ;
+                                                                      rdfs:label "Adjective Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AdjustmentMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/AdjustmentMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Adjustment Measurement is some Neuroticism Measurement that is negatively correlated to the output of some Adjustment_Assay." ;
+                                                                     rdfs:label "Adjustment Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AdjustmentQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/AdjustmentQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Adjustment_Questionnaire is some Personality_Scale that evaluates Neuroticism of some Personality."@en ;
+                                                                       rdfs:label "Adjustment Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AggressionMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/AggressionMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Aggression_Measurement is some Agreeableness_Measurement that is negatively correlated to the output of some Aggression_Assay." ;
+                                                                     rdfs:label "Aggression Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AggressionQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/AggressionQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Aggression_Questionnaire is some Personality_Scale that evaluates Agreeableness of some Personality."@en ;
+                                                                       rdfs:label "Aggression Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/Agreeableness
+<http://www.github.com/no/ontologies/2017/PAO/Agreeableness> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/MF_0000203> ;
+                                                             <http://purl.org/dc/elements/1.1/source> "Development and Validation of International English Big-Five Mini-Markers. Edmund R. Thomspson. Personality and Individual Differences, Volume 45, Issue 6, October 2008.  http://www.sciencedirect.com/science/article/pii/S0191886908002195"@en ;
+                                                             rdfs:comment "Associated adjectives: appreciative, forgiving, generous, kind, sympathetic, and trusting. "@en ;
+                                                             rdfs:label "Agreeableness"@en ;
+                                                             <http://www.w3.org/2004/02/skos/core#definition> "A personality trait manifesting itself in individual behavioral characteristics that are perceived as kind, sympathetic, cooperative, warm, and considerate."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ScalarPersonalityMeasurementDatum> ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00397> ;
+                                                                                          owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/Agreeableness>
+                                                                                        ] ;
+                                                                        rdfs:label "Agreeableness Measurement"@en ;
+                                                                        <http://www.w3.org/2004/02/skos/core#definition> "A personality measurement datum that is a measurement of some agreeableness."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AscendanceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/AscendanceMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Ascendance_Measurement is some Extraversion_Measurement that is correlated to the output of some Ascendance_Assay." ;
+                                                                     rdfs:label "Ascendance Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/AscendanceQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/AscendanceQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Ascendance Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality." ;
+                                                                       rdfs:label "Ascendance Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/BorderlineMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/BorderlineMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Borderline_Measurement is some Neuroticism_Measurement that is correlated to the output of some Borderline_Assay." ;
+                                                                     rdfs:label "Borderline Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/BorderlineQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/BorderlineQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Borderline_Questionnaire is some Personality_Scale that evaluates Neuroticism of some Personality."@en ;
+                                                                       rdfs:label "Borderline Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/CaliforniaPsychologicalInventoryQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/CaliforniaPsychologicalInventoryQuestionnaire> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                               owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/AchievementViaIndependenceQuestionnaire>
+                                                                                                             ] ,
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                               owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/FeminityQuestionnaire>
+                                                                                                             ] ,
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                               owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/NormFavoringQuestionnaire>
+                                                                                                             ] ,
+                                                                                                             [ rdf:type owl:Restriction ;
+                                                                                                               owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                               owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/WellBeingQuestionnaire>
+                                                                                                             ] ;
+                                                                                             rdfs:label "California Psychological Inventory Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/CompulsiveMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/CompulsiveMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Compulsive_Measurement is some Conscientiousness_Measurement that is correlated to the output of some Compulsive_Assay." ;
+                                                                     rdfs:label "Compulsive Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/CompulsiveQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/CompulsiveQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Compulsive_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality." ;
+                                                                       rdfs:label "Compulsive Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/Conscientiousness
+<http://www.github.com/no/ontologies/2017/PAO/Conscientiousness> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/MF_0000203> ;
+                                                                 rdfs:comment "Associated adjectives: efficient, organized, planful, reliable, responsible, and thorough. "@en ;
+                                                                 rdfs:label "Conscientiousness"@en ;
+                                                                 <http://www.w3.org/2004/02/skos/core#definition> "A personality trait manifesting itself in individual behavioral characteristics that are perceived as careful, self-disciplined, dependable, vigilant, dutiful, and goal-oriented."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ScalarPersonalityMeasurementDatum> ,
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00397> ;
+                                                                                              owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/Conscientiousness>
+                                                                                            ] ;
+                                                                            rdfs:comment "A personality measurement datum that is a measurement of some conscientiousness."@en ;
+                                                                            rdfs:label "Conscientiousness Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ControlMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/ControlMeasurement> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:anyURI
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                    owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:anyURI
+                                                                                  ] ;
+                                                                  rdfs:comment "Control_Measurement is some Conscientiousness_Measurement that is correlated to the output of some Control_Assay." ;
+                                                                  rdfs:label "Control Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ControlQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/ControlQuestionnaire> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                    rdfs:comment "Control_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality."@en ;
+                                                                    rdfs:label "Control Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/CreativePersonalityMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/CreativePersonalityMeasurement> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange xsd:anyURI
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                                owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange xsd:anyURI
+                                                                                              ] ;
+                                                                              rdfs:comment "Creative_Personality_Measurement is some Openness_to_Experience_Measurement that is correlated to the output of some Creative_Personality_Assay." ;
+                                                                              rdfs:label "Creative Personality Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/CreativePersonalityQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/CreativePersonalityQuestionnaire> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                                rdfs:comment "Creative_Personality_Questionnaire is some Personality_Scale that evaluates Openness_to_Experience of some Personality."@en ;
+                                                                                rdfs:label "Creative Personality Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/CriticalParentMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/CriticalParentMeasurement> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                           owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ;
+                                                                         rdfs:comment "Critical_Parent_Measurement is some Agreeableness_Measurement that is negatively correlated to the output of some Critical_Parent_Assay." ;
+                                                                         rdfs:label "Critical Parent Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/CriticalParentQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/CriticalParentQuestionnaire> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                           rdfs:comment "Critical_Parent_Questionnaire is some Personality_Scale that evaluates Agreeableness of some Personality."@en ;
+                                                                           rdfs:label "Critical Parent Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/DominanceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/DominanceMeasurement> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ;
+                                                                    rdfs:comment "Dominance_Measurement is some Extraversion_Measurement that is correlated to the output of some Dominance_Assay." ;
+                                                                    rdfs:label "Dominance Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/DominanceQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/DominanceQuestionnaire> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                      rdfs:comment "Dominance_Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality."@en ;
+                                                                      rdfs:label "Dominance Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ExhibitionMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/ExhibitionMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Exhibition_Measurement is some Extraversion_Measurement that is correlated to the output of some Exhibition_Assay." ;
+                                                                     rdfs:label "Exhibition Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ExhibitionQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/ExhibitionQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Exhibition_Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality."@en ;
+                                                                       rdfs:label "Exhibition Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/Extraversion
+<http://www.github.com/no/ontologies/2017/PAO/Extraversion> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/MF_0000203> ;
+                                                            rdfs:comment "Associated Adjectives: active, assertive, energetic, enthusiastic, outgoing, talkative."@en ;
+                                                            rdfs:label "Extraversion"@en ;
+                                                            <http://www.w3.org/2004/02/skos/core#definition> "A personality trait manifesting itself in individual behavioral characteristics that are perceived as positive, assertive, social, and outgoing."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ScalarPersonalityMeasurementDatum> ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00397> ;
+                                                                                         owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/Extraversion>
+                                                                                       ] ;
+                                                                       rdfs:label "Extraversion Measurement"@en ;
+                                                                       <http://www.w3.org/2004/02/skos/core#definition> "A personality measurement datum that is a measurement of some extraversion."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ExtraversionQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/ExtraversionQuestionnaire> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                         rdfs:comment "Extraversion_Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality."@en ;
+                                                                         rdfs:label "Extraversion Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/FeelingMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/FeelingMeasurement> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:anyURI
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                    owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:anyURI
+                                                                                  ] ;
+                                                                  rdfs:comment "Feeling_Measurement is some Agreeableness_Measurement that is correlated to the output of some Feeling_Assay." ;
+                                                                  rdfs:label "Feeling Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/FeelingQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/FeelingQuestionnaire> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                    rdfs:comment "Feeling_Questionnaire is some Personality_Scale that evaluates Agreeableness of some Personality."@en ;
+                                                                    rdfs:label "Feeling Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/FeminityMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/FeminityMeasurement> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:anyURI
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                     owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:anyURI
+                                                                                   ] ;
+                                                                   rdfs:comment "Femininity_Measurement is some Agreeableness_Measurement that is correlated to the output of some Femininity_Assay." ;
+                                                                   rdfs:label "Femininity Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/FeminityQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/FeminityQuestionnaire> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                     rdfs:comment "Femininity_Questionnaire is some Personality_Scale that evaluates Agreeableness of some Personality."@en ;
+                                                                     rdfs:label "Femininity Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/GuilfordZimmermanTemperamentQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/GuilfordZimmermanTemperamentQuestionnaire> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                           owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/AscendanceQuestionnaire>
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                           owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/ObjectivityQuestionnaire>
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                           owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/RestraintQuestionnaire>
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                           owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/ThoughtfulnessQuestionnaire>
+                                                                                                         ] ;
+                                                                                         rdfs:label "Guilford-Zimmerman Temperament Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/HistrionicMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/HistrionicMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Histrionic_Measurement is some Extraversion_Measurement that is correlated to the output of some Histrionic_Assay." ;
+                                                                     rdfs:label "Histrionic Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/HistrionicQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/HistrionicQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Histrionic_Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality."@en ;
+                                                                       rdfs:label "Histrionic Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/HoganPersonalityInventoryQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/HoganPersonalityInventoryQuestionnaire> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/AdjustmentQuestionnaire>
+                                                                                                      ] ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/IntellectanceQuestionnaire>
+                                                                                                      ] ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/LikabilityQuestionnaire>
+                                                                                                      ] ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/PrudenceQuestionnaire>
+                                                                                                      ] ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/SociabilityQuestionnaire>
+                                                                                                      ] ;
+                                                                                      rdfs:label "Hogan Personality Inventory"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/IdealSelfMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/IdealSelfMeasurement> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                      owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ;
+                                                                    rdfs:comment "Ideal_Self_Measurement is some Neuroticism_Measurement that is negatively correlated to the output of some Ideal_Self_Assay." ;
+                                                                    rdfs:label "Ideal Self Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/IdealSelfQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/IdealSelfQuestionnaire> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                      rdfs:comment "Ideal_Self_Questionnaire is some Personality_Scale that evaluates Neuroticism of some Personality."@en ;
+                                                                      rdfs:label "Ideal Self Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/IntellectanceQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/IntellectanceQuestionnaire> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                          rdfs:comment "Intellectance_Questionnaire is some Personality_Scale that evaluates Openness_to_Experience of some Personality."@en ;
+                                                                          rdfs:label "Intellectance Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/IntelletanceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/IntelletanceMeasurement> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:anyURI
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                         owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:anyURI
+                                                                                       ] ;
+                                                                       rdfs:comment "Intellectance_Measurement is some Openness_to_Experience_Measurement that is correlated to the output of some Intellectance_Assay." ;
+                                                                       rdfs:label "Intellectance Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/InterpersonalAdjectiveScaleQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/InterpersonalAdjectiveScaleQuestionnaire> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                          owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/DominanceQuestionnaire>
+                                                                                                        ] ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                          owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/LoveQuestionnaire>
+                                                                                                        ] ;
+                                                                                        rdfs:label "Interpersonal Adjective Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/IntuitionMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/IntuitionMeasurement> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ;
+                                                                    rdfs:comment "Intuition_Measurement is some Openness_to_Experience_Measurement that is correlated to the output of some Intuition_Assay." ;
+                                                                    rdfs:label "Intuition Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/IntuitionQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/IntuitionQuestionnaire> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                      rdfs:comment "Intuition_Questionnaire is some Personality_Scale that evaluates Openness_to_Experience of some Personality."@en ;
+                                                                      rdfs:label "Intuition Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/JudgingMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/JudgingMeasurement> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:anyURI
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                    owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:anyURI
+                                                                                  ] ;
+                                                                  rdfs:comment "Judging_Measurement is some Conscientiousness_Measurement that is correlated to the output of some Judging_Assay." ;
+                                                                  rdfs:label "Judging Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/JudgingQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/JudgingQuestionnaire> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                    rdfs:comment "Judging_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality."@en ;
+                                                                    rdfs:label "Judging Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/LikabilityMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/LikabilityMeasurement> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                       owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:anyURI
+                                                                                     ] ;
+                                                                     rdfs:comment "Likability_Measurement is some Agreeableness_Measurement that is correlated to the output of some Likability_Assay." ;
+                                                                     rdfs:label "Likability Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/LikabilityQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/LikabilityQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "" ,
+                                                                                    "Likability_Questionnaire is some Personality_Scale that evaluates Agreeableness of some Personality."@en ;
+                                                                       rdfs:label "Likability Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/LoveMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/LoveMeasurement> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                 owl:onDataRange xsd:anyURI
+                                                                               ] ,
+                                                                               [ rdf:type owl:Restriction ;
+                                                                                 owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                 owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                 owl:onDataRange xsd:anyURI
+                                                                               ] ;
+                                                               rdfs:comment "Love_Measurement is some Agreeableness_Measurement that is correlated to the output of some Love_Assay." ;
+                                                               rdfs:label "Love Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/LoveQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/LoveQuestionnaire> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                 rdfs:comment "Love_Questionnaire eis some Personality_Scale that evaluates Agreeableness of some Personality."@en ;
+                                                                 rdfs:label "Love Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/MBExtraversionMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/MBExtraversionMeasurement> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                           owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ;
+                                                                         rdfs:comment "MB_Extraversion_Measurement is some Extraversion_Measurement that is correlated to the output of some MB_Extraversion_Assay. (I.e. on the Myers-Briggs Personality Inventory.)" ,
+                                                                                      "The measure of Extraversion provided by Myers-Briggs Type Indicator." ;
+                                                                         rdfs:label "MB Extraversion Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/MMPIPersonalityDisorderQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/MMPIPersonalityDisorderQuestionnaire> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                      owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/BorderlineQuestionnaire>
+                                                                                                    ] ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                      owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/CompulsiveQuestionnaire>
+                                                                                                    ] ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                      owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/HistrionicQuestionnaire>
+                                                                                                    ] ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                      owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/ParanoidQuestionnaire>
+                                                                                                    ] ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                      owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/SchizotypalQuestionnaire>
+                                                                                                    ] ;
+                                                                                    rdfs:comment "MMPI = Minnesota Multiphasic Personality Inventory" ;
+                                                                                    rdfs:label "MMPI Personality Disorder Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/MilitaryLeadershipMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/MilitaryLeadershipMeasurement> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                               owl:onDataRange xsd:anyURI
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                               owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                               owl:onDataRange xsd:anyURI
+                                                                                             ] ;
+                                                                             rdfs:comment "Military_Leadership_Measurement is some Conscientiousness_Measurement that is correlated to the output of some Military_Leadership_Assay." ;
+                                                                             rdfs:label "Military Leadership Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/MilitaryLeadershipQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/MilitaryLeadershipQuestionnaire> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                               rdfs:comment "Military_Leadership_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality."@en ;
+                                                                               rdfs:label "Military Leadership Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/MinnesotaMultiphasicPersonalityInventoryQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/MinnesotaMultiphasicPersonalityInventoryQuestionnaire> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                                       owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                                       owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/PsychastheniaQuestionnaire>
+                                                                                                                     ] ,
+                                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                                       owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                                       owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/SocialIntroversionQuestionnaire>
+                                                                                                                     ] ;
+                                                                                                     rdfs:label "Minnesota Multiphasic Personality Inventory Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/MultidimensionalPersonalityQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/MultidimensionalPersonalityQuestionnaire> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                          owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/AbsorptionQuestionnaire>
+                                                                                                        ] ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                          owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/AggressionQuestionnaire>
+                                                                                                        ] ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                          owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/ControlQuestionnaire>
+                                                                                                        ] ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                          owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/SocialClosenessQuestionnaire>
+                                                                                                        ] ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                          owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/StressReactionQuestionnaire>
+                                                                                                        ] ;
+                                                                                        rdfs:label "Multidimensional Personality Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/MyersBriggsTypeIndicatorQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/MyersBriggsTypeIndicatorQuestionnaire> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                       owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/ExtraversionQuestionnaire>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                       owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/FeelingQuestionnaire>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                       owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/IntuitionQuestionnaire>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                       owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/JudgingQuestionnaire>
+                                                                                                     ] ;
+                                                                                     rdfs:label "Myers-Briggs Type Indicator Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/Neuroticism
+<http://www.github.com/no/ontologies/2017/PAO/Neuroticism> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://purl.obolibrary.org/obo/MF_0000203> ;
+                                                           rdfs:comment "Associated adjectives: anxious, self-pitying, tense, touchy unstable, and worrying."@en ;
+                                                           rdfs:label "Neuroticism"@en ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "A personality trait manifesting itself in individual behavioral characteristics that are perceived as angry, anxious, depressed, unstable, and vulnerable."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ScalarPersonalityMeasurementDatum> ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00397> ;
+                                                                                        owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/Neuroticism>
+                                                                                      ] ;
+                                                                      rdfs:label "Neuroticism Measurement"@en ;
+                                                                      <http://www.w3.org/2004/02/skos/core#definition> "A personality measurement datum that is a measurement of some neuroticism."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/NormFavoringMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/NormFavoringMeasurement> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:anyURI
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                         owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:anyURI
+                                                                                       ] ;
+                                                                       rdfs:comment "Norm-Favoring_Measurement is some Conscientiousness_Measurement that is correlated to the output of some Norm-Favoring_Assay." ;
+                                                                       rdfs:label "Norm-Favoring Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/NormFavoringQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/NormFavoringQuestionnaire> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                         rdfs:comment "Norm-Favoring_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality."@en ;
+                                                                         rdfs:label "Norm-Favoring Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/NurturanceQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/NurturanceQuestionnaire> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                       rdfs:comment "Nurturance_Questionnaire is some Personality_Scale that evaluates Agreeableness of some Personality."@en ;
+                                                                       rdfs:label "Nurturance Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/NuturanceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/NuturanceMeasurement> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ;
+                                                                    rdfs:comment "Nurturance_Measurement is some Agreeableness_Measurement that is correlated to the output of some Nurturance_Assay." ;
+                                                                    rdfs:label "Nurturance Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ObjectivityMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/ObjectivityMeasurement> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement> ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                        owl:onDataRange xsd:anyURI
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                        owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                        owl:onDataRange xsd:anyURI
+                                                                                      ] ;
+                                                                      rdfs:comment "Objectivity_Measurement is some Neuroticism_Measurement that is negatively correlated to the output of some Objectivity_Assay." ;
+                                                                      rdfs:label "Objectivity Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ObjectivityQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/ObjectivityQuestionnaire> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                        rdfs:comment "Objectivity_Questionnaire is some Personality_Scale that evaluates Neuroticism of some Personality."@en ;
+                                                                        rdfs:label "Objectivity Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OpennessToExperience
+<http://www.github.com/no/ontologies/2017/PAO/OpennessToExperience> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://purl.obolibrary.org/obo/MF_0000203> ;
+                                                                    rdfs:comment "Associated adjectives: artistic, curious, imaginative, insightful, original, and wide interests."@en ;
+                                                                    rdfs:label "Openness to Experience"@en ;
+                                                                    <http://www.w3.org/2004/02/skos/core#definition> "A personality trait manifesting itself in individual behavioral characteristics that are perceived as revealing, curiosity, an appreciation of novelty and variety of experiences and ideas, invention, and unpredictability."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ScalarPersonalityMeasurementDatum> ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00397> ;
+                                                                                                 owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperience>
+                                                                                               ] ;
+                                                                               rdfs:label "Openness to Experience Measurement"@en ;
+                                                                               <http://www.w3.org/2004/02/skos/core#definition> "A personality measurement datum that is a measurement of some openness to experience."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OrderMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/OrderMeasurement> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                  owl:onDataRange xsd:anyURI
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                  owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                  owl:onDataRange xsd:anyURI
+                                                                                ] ;
+                                                                rdfs:comment "Order_Measurement is some Conscientiousness_Measurement that is correlated to the output of some Order_Assay." ;
+                                                                rdfs:label "Order Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/OrderQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/OrderQuestionnaire> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                  rdfs:comment "Order_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality."@en ;
+                                                                  rdfs:label "Order Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ParanoidMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/ParanoidMeasurement> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/AgreeablenessMeasurement> ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:anyURI
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                     owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:anyURI
+                                                                                   ] ;
+                                                                   rdfs:comment "Paraonid_Measurement is some Agreeableness_Measurement that is negatively correlated to the output of some Paranoid_Assay." ;
+                                                                   rdfs:label "Paranoid Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ParanoidQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/ParanoidQuestionnaire> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                     rdfs:comment "Paranoid_Questionnaire is some Personality_Scale that evaluates Agreeableness of some Personality."@en ;
+                                                                     rdfs:label "Paranoid Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/PersonalityAssessmentProcess
+<http://www.github.com/no/ontologies/2017/PAO/PersonalityAssessmentProcess> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.ifomis.org/bfo/1.1/span#ProcessAggregate> ,
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_participant> ;
+                                                                                              owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire>
+                                                                                            ] ;
+                                                                            rdfs:label "Personality Assessment Process"@en ,
+                                                                                       "Personality_Assessment_Process is some Planned_Process of evaluating some Personality." .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                                                                        rdfs:comment "Personality_Scale is some Assay of some Personality." ;
+                                                                        rdfs:label "Personality Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/PersonalityResearchQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/PersonalityResearchQuestionnaire> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ,
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                  owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/ExhibitionQuestionnaire>
+                                                                                                ] ,
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                  owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/NurturanceQuestionnaire>
+                                                                                                ] ,
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                  owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/OrderQuestionnaire>
+                                                                                                ] ,
+                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                  owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                                                                                  owl:someValuesFrom <http://www.github.com/no/ontologies/2017/PAO/SentienceQuestionnaire>
+                                                                                                ] ;
+                                                                                rdfs:label "Personality Research Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/PrudenceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/PrudenceMeasurement> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:anyURI
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                     owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:anyURI
+                                                                                   ] ;
+                                                                   rdfs:comment "Prudence_Measurement is some Conscientiousness_Measurement that is correlated to the output of some Prudence_Assay." ;
+                                                                   rdfs:label "Prudence Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/PrudenceQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/PrudenceQuestionnaire> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                     rdfs:comment "" ;
+                                                                     rdfs:label "Prudence Questionnaire"@en ,
+                                                                                "Prudence_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/PsychastheniaMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/PsychastheniaMeasurement> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement> ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onDataRange xsd:anyURI
+                                                                                        ] ,
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                          owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                          owl:onDataRange xsd:anyURI
+                                                                                        ] ;
+                                                                        rdfs:comment "Psychasthenia_Measurement is some Neuroticism_Measurement that is correlated to the output of some Psychasthenia_Assay." ;
+                                                                        rdfs:label "Psychasthenia Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/PsychastheniaQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/PsychastheniaQuestionnaire> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                          rdfs:comment "Psychasthenia_Assay is some Personality_Scale that evaluates Neuroticism of some Personality." ;
+                                                                          rdfs:label "Psychasthenia Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/RestraintMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/RestraintMeasurement> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ConscientiousnessMeasurement> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ;
+                                                                    rdfs:comment "Restraint_Measurement is some Conscientiousness_Measurement that is correlated to the output of some Restraint_Assay." ;
+                                                                    rdfs:label "Restraint Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/RestraintQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/RestraintQuestionnaire> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                      rdfs:comment "Restraint_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality."@en ;
+                                                                      rdfs:label "Restraint Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ScalarPersonalityMeasurementDatum
+<http://www.github.com/no/ontologies/2017/PAO/ScalarPersonalityMeasurementDatum> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000109> ;
+                                                                                 rdfs:label "Personality Measurement Datum"@en ;
+                                                                                 <http://www.w3.org/2004/02/skos/core#definition> "A measurement datum that is a measurement of some personality or personality trait."@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SchizotypalMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/SchizotypalMeasurement> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                        owl:onDataRange xsd:anyURI
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                        owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                        owl:onDataRange xsd:anyURI
+                                                                                      ] ;
+                                                                      rdfs:comment "Schizotypal_Measurement is some Openness_to_Experience_Measurement that is correlated to the output of some Schizotypal_Assay." ;
+                                                                      rdfs:label "Schizotypal Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SchizotypalQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/SchizotypalQuestionnaire> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                        rdfs:comment "Schizotypal_Questionnaire is some Personality_Scale that evaluates Openness_to_Experience of some Personality."@en ;
+                                                                        rdfs:label "Schizotypal Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SelfConfidenceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/SelfConfidenceMeasurement> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                           owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ;
+                                                                         rdfs:comment "Self-Confidence_Measurement is some Extraversion_Measurement that is correlated to the output of some Self-Confidence_Assay." ;
+                                                                         rdfs:label "Self Confidence Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SelfConfidenceQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/SelfConfidenceQuestionnaire> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                           rdfs:comment "Self-Confidence_Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality."@en ;
+                                                                           rdfs:label "Self-Confidence Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SentienceMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/SentienceMeasurement> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                      owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ;
+                                                                    rdfs:comment "Sentience_Measurement is some Openness_to_Experience_Measurement that is correlated to the output of some Sentience_Assay." ;
+                                                                    rdfs:label "Sentience Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SentienceQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/SentienceQuestionnaire> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                      rdfs:comment "Sentience_Questionnaire is some Personality_Scale that evaluates Openness_to_Experience of some Personality."@en ;
+                                                                      rdfs:label "Sentience Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SociabilityMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/SociabilityMeasurement> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                        owl:onDataRange xsd:anyURI
+                                                                                      ] ,
+                                                                                      [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                        owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                        owl:onDataRange xsd:anyURI
+                                                                                      ] ;
+                                                                      rdfs:comment "Sociability_Measurement is some Extraversion_Measurement that is correlated to the output of some Sociability_Assay." ;
+                                                                      rdfs:label "Sociability Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SociabilityQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/SociabilityQuestionnaire> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                        rdfs:comment "Sociability_Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality."@en ;
+                                                                        rdfs:label "Sociability Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SocialClosenessMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/SocialClosenessMeasurement> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                          [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                            owl:onDataRange xsd:anyURI
+                                                                                          ] ,
+                                                                                          [ rdf:type owl:Restriction ;
+                                                                                            owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                            owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                            owl:onDataRange xsd:anyURI
+                                                                                          ] ;
+                                                                          rdfs:comment "Social_Closeness_Measurement is some Extraversion_Measurement that is correlated to the output of some Social_Closeness_Assay." ;
+                                                                          rdfs:label "Social Closeness Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SocialClosenessQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/SocialClosenessQuestionnaire> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                            rdfs:comment "Social_Closeness_Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality."@en ;
+                                                                            rdfs:label "Social Closeness Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SocialIntroversionMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/SocialIntroversionMeasurement> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/ExtraversionMeasurement> ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                               owl:onDataRange xsd:anyURI
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                               owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                               owl:onDataRange xsd:anyURI
+                                                                                             ] ;
+                                                                             rdfs:comment "Social_Introversion_Measurement is some Extraversion_Measurement that is negatively correlated to the output of some Social_Introversion_Assay." ;
+                                                                             rdfs:label "Social Introversion Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/SocialIntroversionQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/SocialIntroversionQuestionnaire> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                               rdfs:comment "Social_Introversion_Questionnaire is some Personality_Scale that evaluates Extraversion of some Personality."@en ;
+                                                                               rdfs:label "Social Introversion Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/StressReactionMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/StressReactionMeasurement> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement> ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                           owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ;
+                                                                         rdfs:comment "Stress_Reaction_Measurement is some Neuroticism_Measurement that is correlated to the output of some Stress_Reaction_Assay." ;
+                                                                         rdfs:label "Stress Reaction Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/StressReactionQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/StressReactionQuestionnaire> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                           rdfs:comment "Stress_Reaction_Questionnaire is some Personality_Scale that evaluates Neuroticism of some Personality."@en ;
+                                                                           rdfs:label "Stress Reaction Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ThoughtfulnessMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/ThoughtfulnessMeasurement> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperienceMeasurement> ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00265> ;
+                                                                                           owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                           owl:onDataRange xsd:anyURI
+                                                                                         ] ;
+                                                                         rdfs:comment "Thoughtfulness_Measurement is some Openness_to_Experience_Measurement that is correlated to the output of some Thoughtfulness_Assay." ;
+                                                                         rdfs:label "Thoughtfulness Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/ThoughtfulnessQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/ThoughtfulnessQuestionnaire> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                           rdfs:comment "Thoughtfulness_Questionnaire is some Personality_Scale that evaluates Conscientiousness of some Personality."@en ;
+                                                                           rdfs:label "Thoughtfulness Questionnaire"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/WellBeingMeasurement
+<http://www.github.com/no/ontologies/2017/PAO/WellBeingMeasurement> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/NeuroticismMeasurement> ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ,
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty <http://www.github.com/no/ontologies/2017/PAO/OEF13_00367> ;
+                                                                                      owl:maxQualifiedCardinality "100"^^xsd:nonNegativeInteger ;
+                                                                                      owl:onDataRange xsd:anyURI
+                                                                                    ] ;
+                                                                    rdfs:comment "Well-Being_Measurement is some Neuroticism_Measurement that is negatively correlated to the output of some Well-Being_Assay." ;
+                                                                    rdfs:label "Well-Being Measurement"@en .
+
+
+###  http://www.github.com/no/ontologies/2017/PAO/WellBeingQuestionnaire
+<http://www.github.com/no/ontologies/2017/PAO/WellBeingQuestionnaire> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.github.com/no/ontologies/2017/PAO/PersonalityQuestionnaire> ;
+                                                                      rdfs:comment "Well-Being_Questionnaire is some Personality_Scale that evaluates Neuroticism of some Personality."@en ;
+                                                                      rdfs:label "Well-Being Questionnaire"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.github.com/no/ontologies/2017/PAO/Agreeableness>
+                <http://www.github.com/no/ontologies/2017/PAO/Conscientiousness>
+                <http://www.github.com/no/ontologies/2017/PAO/Extraversion>
+                <http://www.github.com/no/ontologies/2017/PAO/Neuroticism>
+                <http://www.github.com/no/ontologies/2017/PAO/OpennessToExperience>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
