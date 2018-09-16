@@ -1,0 +1,151 @@
+@prefix : <http://www.semanticweb.org/ottejn1/ontologies/2018/8/untitled-ontology-139/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ottejn1/ontologies/2018/8/untitled-ontology-139> .
+
+<http://www.semanticweb.org/ottejn1/ontologies/2018/8/untitled-ontology-139> rdf:type owl:Ontology ;
+                                                                              owl:imports <http://purl.obolibrary.org/obo/bfo/classes-only.owl> ,
+                                                                                          <http://purl.obolibrary.org/obo/ro/core.owl> .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/otte/mfto#MFTO_6022121
+<http://www.semanticweb.org/otte/mfto#MFTO_6022121> rdf:type rdfs:Datatype ;
+                                                    rdfs:label "hastextvalue"@en .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/otte/mfto#MFTO_5039092
+<http://www.semanticweb.org/otte/mfto#MFTO_5039092> rdf:type owl:ObjectProperty ;
+                                                    rdfs:label "is about"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#MFTO_6022123
+<http://www.semanticweb.org/otte/mfto#MFTO_6022123> rdf:type owl:ObjectProperty ;
+                                                    rdfs:label "has text value"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000716
+<http://www.semanticweb.org/otte/mfto#APLartifact_000716> rdf:type owl:Class ;
+                                                          rdfs:label "human research subject"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000717
+<http://www.semanticweb.org/otte/mfto#APLartifact_000717> rdf:type owl:Class ;
+                                                          rdfs:label "sex"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000718
+<http://www.semanticweb.org/otte/mfto#APLartifact_000718> rdf:type owl:Class ;
+                                                          rdfs:label "birth year"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000719
+<http://www.semanticweb.org/otte/mfto#APLartifact_000719> rdf:type owl:Class ;
+                                                          rdfs:label "age"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000720
+<http://www.semanticweb.org/otte/mfto#APLartifact_000720> rdf:type owl:Class ;
+                                                          rdfs:label "country"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000721
+<http://www.semanticweb.org/otte/mfto#APLartifact_000721> rdf:type owl:Class ;
+                                                          rdfs:label "MFQ_HARM_AVG"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000722
+<http://www.semanticweb.org/otte/mfto#APLartifact_000722> rdf:type owl:Class ;
+                                                          rdfs:label "MFQ_FAIRNESS_AVG"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000723
+<http://www.semanticweb.org/otte/mfto#APLartifact_000723> rdf:type owl:Class ;
+                                                          rdfs:label "MFQ_INGROUP_AVG"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000724
+<http://www.semanticweb.org/otte/mfto#APLartifact_000724> rdf:type owl:Class ;
+                                                          rdfs:label "MFQ_AUTHORITY_AVG"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000725
+<http://www.semanticweb.org/otte/mfto#APLartifact_000725> rdf:type owl:Class ;
+                                                          rdfs:label "MFQ_PURITY_AVG"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000726
+<http://www.semanticweb.org/otte/mfto#APLartifact_000726> rdf:type owl:Class ;
+                                                          rdfs:label "MFQ_HFminusIAP"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_000727
+<http://www.semanticweb.org/otte/mfto#APLartifact_000727> rdf:type owl:Class ;
+                                                          rdfs:label "MFQ_BLANKS"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_066263
+<http://www.semanticweb.org/otte/mfto#APLartifact_066263> rdf:type owl:Class ;
+                                                          rdfs:label "process of birth"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_066264
+<http://www.semanticweb.org/otte/mfto#APLartifact_066264> rdf:type owl:Class ;
+                                                          rdfs:label "Foundation of Harm"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_066265
+<http://www.semanticweb.org/otte/mfto#APLartifact_066265> rdf:type owl:Class ;
+                                                          rdfs:label "Foundation of Fairness"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_066266
+<http://www.semanticweb.org/otte/mfto#APLartifact_066266> rdf:type owl:Class ;
+                                                          rdfs:label "Foundation of InGroup"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_066267
+<http://www.semanticweb.org/otte/mfto#APLartifact_066267> rdf:type owl:Class ;
+                                                          rdfs:label "Foundation of Authority"@en .
+
+
+###  http://www.semanticweb.org/otte/mfto#APLartifact_066268
+<http://www.semanticweb.org/otte/mfto#APLartifact_066268> rdf:type owl:Class ;
+                                                          rdfs:label "Foundation of Purity"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/otte/mfto#APLartifact_000716>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000717>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000718>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000719>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000720>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000721>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000722>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000723>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000724>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000725>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000726>
+                <http://www.semanticweb.org/otte/mfto#APLartifact_000727>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
