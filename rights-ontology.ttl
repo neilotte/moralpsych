@@ -1,0 +1,415 @@
+# baseURI: http:semanticweb.org/hohfeldiansystem/
+
+@prefix : <http:semanticweb.org/hohfeldiansystem/> .
+@prefix AllCoreOntology: <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AllCoreOntology#> .
+@prefix ROImport: <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ROImport#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+obo:BFO_0000051
+  rdf:type owl:ObjectProperty ;
+  rdf:type owl:TransitiveProperty ;
+  obo:IAO_0000111 "has part"@en ;
+  obo:IAO_0000112 "my body has part my brain (continuant parthood, two material entities)"@en ;
+  obo:IAO_0000112 "my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)"@en ;
+  obo:IAO_0000112 "this year has part this day (occurrent parthood)"@en ;
+  obo:IAO_0000115 "a core relation that holds between a whole and its part"@en ;
+  obo:IAO_0000116 "Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part."@en ;
+  obo:IAO_0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime"@en ;
+  obo:IAO_0000116 """Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
+
+A continuant cannot have an occurrent as part: use 'participates in'. An occurrent cannot have a continuant as part: use 'has participant'. An immaterial entity cannot have a material entity as part: use 'location of'. An independent continuant cannot have a specifically dependent continuant as part: use 'bearer of'. A specifically dependent continuant cannot have an independent continuant as part: use 'inheres in'."""@en ;
+  obo:IAO_0000118 "has_part"@en ;
+  obo:RO_0001900 obo:RO_0001901 ;
+  rdfs:label "has part" ;
+  rdfs:label "has part"@en ;
+.
+terms:bibliographicCitation
+  rdf:type owl:AnnotationProperty ;
+.
+terms:creator
+  rdf:type owl:AnnotationProperty ;
+.
+rdfs:Resource
+  rdf:type owl:Class ;
+.
+skos:altlabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:domain rdfs:Resource ;
+.
+skos:definition
+  rdf:type owl:AnnotationProperty ;
+.
+skos:example
+  rdf:type owl:AnnotationProperty ;
+.
+:
+  rdf:type owl:Ontology ;
+  terms:creator "J. Neil Otte" ;
+  rdfs:comment "This ontology models The Hohfeldian System of Rights. The four basic components of rights are known as “the Hohfeldian incidents” after Wesley Hohfeld (1879–1918), the American legal theorist who discovered them. The four atomic rights include the privilege, the claim, the power, and the immunity."@en ;
+  rdfs:label "Hohfeldian Rights Ontology"@en ;
+.
+:rights_0000001
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:label "Right"@en ;
+  owl:disjointWith :rights_0000012 ;
+  skos:definition "A defined class equivalent to Atomic Right or Molecular Right."@en ;
+.
+:rights_0000002
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:label "Atomic Right"@en ;
+  rdfs:subClassOf :rights_0000001 ;
+  owl:disjointWith :rights_0000003 ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :rights_0000008
+          :rights_0000009
+          :rights_0000010
+          :rights_0000011
+        ) ;
+    ] ;
+  skos:definition "A defined class equivalent to an instance of a power, privilege, liberty, or immunity."@en ;
+.
+:rights_0000003
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/> " ;
+  rdfs:label "Molecular Right"@en ;
+  rdfs:subClassOf :rights_0000001 ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:intersectionOf (
+          :rights_0000001
+          [
+            rdf:type owl:Class ;
+            owl:unionOf (
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000008 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000009 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000008 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000009 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000010 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000008 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000009 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000010 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000011 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000008 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000009 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000011 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000008 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000010 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000008 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000010 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000011 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000008 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000011 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000009 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000010 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000009 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000010 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000011 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000009 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000011 ;
+                      ]
+                    ) ;
+                ]
+                [
+                  rdf:type owl:Class ;
+                  owl:intersectionOf (
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000010 ;
+                      ]
+                      [
+                        rdf:type owl:Restriction ;
+                        owl:onProperty obo:BFO_0000051 ;
+                        owl:someValuesFrom :rights_0000011 ;
+                      ]
+                    ) ;
+                ]
+              ) ;
+          ]
+        ) ;
+    ] ;
+  skos:definition "A rule that consists of an aggregate of one or more privileges, powers, liberties, or immunities."@en ;
+.
+:rights_0000004
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:label "Primary Rule"@en ;
+  rdfs:subClassOf :rights_0000002 ;
+  owl:disjointWith :rights_0000005 ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :rights_0000008
+          :rights_0000010
+        ) ;
+    ] ;
+  skos:definition "A rule requiring that people perform or refrain from performing particular actions (Hart 1961). Indeed the primary rules for all physical actions are properly analyzed as privileges and claims. Were we to know all privileges and claims concerning physical actions, we would know for every possible physical action whether that action was permitted, required, or forbidden."@en ;
+.
+:rights_0000005
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:label "Secondary Rule"@en ;
+  rdfs:subClassOf :rights_0000002 ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :rights_0000009
+          :rights_0000011
+        ) ;
+    ] ;
+  skos:definition "A rule that specifies how agents can introduce and change primary rules."@en ;
+.
+:rights_0000006
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:label "Active Right"@en ;
+  rdfs:subClassOf :rights_0000001 ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :rights_0000008
+          :rights_0000009
+        ) ;
+    ] ;
+  skos:definition "A right that the bearer has to perform some action."@en ;
+.
+:rights_0000007
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:label "Passive Right"@en ;
+  rdfs:subClassOf :rights_0000001 ;
+  owl:equivalentClass [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          :rights_0000010
+          :rights_0000011
+        ) ;
+    ] ;
+  skos:definition "A right that bearer has that another agent perform some action."@en ;
+.
+:rights_0000008
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:comment "Axiom: A has a privilege to ɸ if and only if A has no duty not to ɸ. Axiom: If A has a privilege that Aɸ, then A has no duty that not A ɸ."@en ;
+  rdfs:label "Privilege"@en ;
+  rdfs:subClassOf :rights_0000004 ;
+  owl:disjointWith :rights_0000009 ;
+  owl:disjointWith :rights_0000010 ;
+  owl:disjointWith :rights_0000011 ;
+  skos:altlabel "Liberty"@en ;
+  skos:definition "A primary rule where the subject may perform an action and has no duty not to perform the action"@en ;
+  skos:example "You have a right to pick up a shell that you find on the beach."@en ;
+.
+:rights_0000009
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:comment "Axiom: A has a power if and only if A has the ability to alter her own or another's Hohfeldian incidents."@en ;
+  rdfs:label "Power"@en ;
+  rdfs:subClassOf :rights_0000005 ;
+  owl:disjointWith :rights_0000010 ;
+  owl:disjointWith :rights_0000011 ;
+  skos:altlabel "Ability"@en ;
+  skos:definition "A secondary rule that allows the subject to alter an incident of themselves or another"@en ;
+  skos:example "A ship's captain has the power-right to order a midshipman to scrub the deck. Ordering, promising, waiving, abandoning, consenting, selling, and sentencing are all examples of acts by which a rightholder exercises a power to change his own Hohfeldian incidents or those of another."@en ;
+.
+:rights_0000010
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:comment "Axiom: A has a claim that B ɸ if and only if B has a duty to A to ɸ."@en ;
+  rdfs:label "Claim"@en ;
+  rdfs:subClassOf :rights_0000004 ;
+  owl:disjointWith :rights_0000011 ;
+  skos:definition "A primary rule that always mutually depends upon a duty in another individual that is owed to the subject"@en ;
+  skos:example "A contract between employer and employee confers on the employee a right to be paid her wages."@en ;
+.
+:rights_0000011
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:comment """Axiom: B has an immunity if and only if A lacks the ability to alter B's Hohfeldian incidents.
+Axioms: When A has the ability to alter B's Hohfeldian incidents, then A has a power. When A lacks the ability to alter B's Hohfeldian incidents, then B has an immunity."""@en ;
+  rdfs:label "Immunity"@en ;
+  rdfs:subClassOf :rights_0000005 ;
+  skos:definition "A secondary rule where the subject of an incident cannot have the incident altered by the ability of another"@en ;
+  skos:example "Example: The United States Congress lacks the ability within the Constitution to impose upon American citizens a duty to kneel daily before a cross. Since the Congress lacks a power, the citizens have an immunity."@en ;
+.
+:rights_0000012
+  rdf:type rdfs:Resource ;
+  rdf:type owl:Class ;
+  terms:bibliographicCitation "Wenar, Leif, \"Rights\", The Stanford Encyclopedia of Philosophy (Spring 2020 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/spr2020/entries/rights/>" ;
+  rdfs:label "Duty"@en ;
+  skos:altlabel "Obligation"@en ;
+  skos:definition "A rule whose subject owes, is obliged, or is required to perform some action"@en ;
+.
