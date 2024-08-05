@@ -3,3 +3,4 @@ This is a repository for a suite of modular ontologies that are designed to repr
 Initial commits: 
 1. A Rights Ontology based on The Hohfeldian Analytical System.
 2. A Moral Foundations Theory Ontology. 
+   
