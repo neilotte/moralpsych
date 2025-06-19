@@ -4,7 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/ottejn1/ontologies/2018/8/untitled-ontology-139> .
+@base <http://www.semanticweb.org/ottejn1/ontologies/2018/8/untitled-ontology-139/> .
 
 <http://www.semanticweb.org/ottejn1/ontologies/2018/8/untitled-ontology-139> rdf:type owl:Ontology ;
                                                                               owl:imports <http://purl.obolibrary.org/obo/bfo/classes-only.owl> ,
@@ -39,6 +39,7 @@
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000716
 <http://www.semanticweb.org/otte/mfto#APLartifact_000716> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
                                                           rdfs:label "human research subject"@en .
 
 
@@ -49,26 +50,31 @@
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000718
 <http://www.semanticweb.org/otte/mfto#APLartifact_000718> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
                                                           rdfs:label "birth year"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000719
 <http://www.semanticweb.org/otte/mfto#APLartifact_000719> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                                           rdfs:label "age"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000720
 <http://www.semanticweb.org/otte/mfto#APLartifact_000720> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000029> ;
                                                           rdfs:label "country"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000721
 <http://www.semanticweb.org/otte/mfto#APLartifact_000721> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                                           rdfs:label "MFQ_HARM_AVG"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000722
 <http://www.semanticweb.org/otte/mfto#APLartifact_000722> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                                           rdfs:label "MFQ_FAIRNESS_AVG"@en .
 
 
@@ -79,6 +85,7 @@
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000724
 <http://www.semanticweb.org/otte/mfto#APLartifact_000724> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                                           rdfs:label "MFQ_AUTHORITY_AVG"@en .
 
 
@@ -89,11 +96,13 @@
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000726
 <http://www.semanticweb.org/otte/mfto#APLartifact_000726> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                                           rdfs:label "MFQ_HFminusIAP"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_000727
 <http://www.semanticweb.org/otte/mfto#APLartifact_000727> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                                           rdfs:label "MFQ_BLANKS"@en .
 
 
@@ -104,26 +113,31 @@
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_066264
 <http://www.semanticweb.org/otte/mfto#APLartifact_066264> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
                                                           rdfs:label "Foundation of Harm"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_066265
 <http://www.semanticweb.org/otte/mfto#APLartifact_066265> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
                                                           rdfs:label "Foundation of Fairness"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_066266
 <http://www.semanticweb.org/otte/mfto#APLartifact_066266> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
                                                           rdfs:label "Foundation of InGroup"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_066267
 <http://www.semanticweb.org/otte/mfto#APLartifact_066267> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
                                                           rdfs:label "Foundation of Authority"@en .
 
 
 ###  http://www.semanticweb.org/otte/mfto#APLartifact_066268
 <http://www.semanticweb.org/otte/mfto#APLartifact_066268> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
                                                           rdfs:label "Foundation of Purity"@en .
 
 
@@ -148,4 +162,4 @@
 ] .
 
 
-###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
